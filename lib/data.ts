@@ -3,6 +3,9 @@ export type Phone = {
   tel: string;
 };
 
+// Placeholder until the real production domain is known — update after first deploy.
+export const SITE_URL = "https://sr-engineering-works.vercel.app";
+
 export const BUSINESS = {
   name: "SR Engineering Works",
   prop: "Bhawar Singh",
@@ -210,3 +213,48 @@ export const PROCESS: ProcessStep[] = [
       "Ongoing maintenance contracts and phone support keep your machine running.",
   },
 ];
+
+export function businessJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "Organization"],
+    name: BUSINESS.name,
+    image: `${SITE_URL}/og.jpg`,
+    url: SITE_URL,
+    telephone: BUSINESS.phones.map((p) => p.tel),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "60, Sana Dungar",
+      addressLocality: "Jaipur",
+      addressRegion: "Rajasthan",
+      postalCode: "302012",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 26.9124,
+      longitude: 75.7873,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "09:00",
+      closes: "19:00",
+    },
+    makesOffer: PRODUCTS.map((p) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Product",
+        name: p.name,
+        description: p.description,
+      },
+    })),
+  };
+}
