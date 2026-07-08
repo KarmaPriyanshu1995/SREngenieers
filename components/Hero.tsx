@@ -75,7 +75,7 @@ export default function Hero() {
 
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-steel-950">
               <Image
-                src="/work/1.jpg"
+                src="/products/hydraulic-scissor-lift.jpg"
                 alt="Hydraulic scissor lift built by SR Engineering Works, Jaipur"
                 fill
                 className="object-cover"
