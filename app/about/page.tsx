@@ -49,7 +49,7 @@ export default function AboutPage() {
           <span className="absolute bottom-2 right-2 h-2 w-2 rounded-full bg-steel-600" />
           <div className="relative aspect-[4/3] w-full overflow-hidden bg-steel-950">
             <Image
-              src="/work/2.jpg"
+              src="/products/custom-fabrication-work.jpg"
               alt="SR Engineering Works fabrication shop floor, Jaipur"
               fill
               className="object-cover"
