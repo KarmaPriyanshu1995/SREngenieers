@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --steel-950: #14181d;
+  --steel-800: #232a33;
+  --steel-600: #46525f;
+  --steel-300: #9aa7b4;
+  --off-white: #f2f4f6;
+  --hydraulic: #f5b300;
+}
+
+@theme inline {
+  --color-steel-950: var(--steel-950);
+  --color-steel-800: var(--steel-800);
+  --color-steel-600: var(--steel-600);
+  --color-steel-300: var(--steel-300);
+  --color-white: var(--off-white);
+  --color-hydraulic: var(--hydraulic);
+  --font-display: var(--font-saira);
+  --font-body: var(--font-barlow);
+}
+
+body {
+  background: var(--steel-950);
+  color: var(--off-white);
+  font-family: var(--font-body);
+}
+
+:focus-visible {
+  outline: 2px solid var(--hydraulic);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .caution-stripe {
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--hydraulic) 0px,
+      var(--hydraulic) 8px,
+      var(--steel-950) 8px,
+      var(--steel-950) 16px
+    );
+  }
+}
